@@ -5,7 +5,7 @@ task("echo", steps=[
         name="version",
         image="alpine",
         command=[
-            "/bin/echo", "test"d
+            "/bin/echo", "test"
         ]
     )
 ])
