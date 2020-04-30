@@ -1,0 +1,13 @@
+#!mesosphere/dispatch-starlark:v0.5
+
+task("echo", steps=[
+    k8s.corev1.Container(
+        name="version",
+        image="alpine",
+        command=[
+            "/bin/echo", "test"d
+        ]
+    )
+])
+
+action(tasks=["echo"], on=push(branches=["*"]))
