@@ -1,5 +1,8 @@
 #!mesosphere/dispatch-starlark:v0.5
 
+load("github.com/mesosphere/dispatch-catalog/starlark/stable/pipeline@master", "push")
+
+
 task("echo", steps=[
     k8s.corev1.Container(
         name="version",
