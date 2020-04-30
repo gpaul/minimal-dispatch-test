@@ -14,4 +14,3 @@ task("echo", steps=[
 ])
 
 action(tasks=["echo"], on=push(branches=["*"]))
-
