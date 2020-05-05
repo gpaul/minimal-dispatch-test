@@ -14,3 +14,4 @@ task("echo", steps=[
 ])
 
 action(tasks=["echo"], on=push(branches=["*"]))
+action(tasks=["echo"], on=pull_request(branches=["master"], chatops=["build"]))
