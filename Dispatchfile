@@ -1,6 +1,6 @@
 #!mesosphere/dispatch-starlark:v0.5
 
-load("github.com/mesosphere/dispatch-catalog/starlark/stable/pipeline@master", "push")
+load("github.com/mesosphere/dispatch-catalog/starlark/stable/pipeline@master", "push", "pull_request")
 
 
 task("echo", steps=[
@@ -14,4 +14,4 @@ task("echo", steps=[
 ])
 
 action(tasks=["echo"], on=push(branches=["*"]))
-
+action(tasks=["echo"], on=pull_request(branches=["master"], chatops=["build"]))
